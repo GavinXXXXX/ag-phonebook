@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>My Phonebook</h2>
+    <div fxLayout="row wrap" fxLayoutGap="20px grid">
+        <div *ngFor="let contact of Phonebook">
+            <mat-card class="contact-card" >
+                <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>{{ contact.firstname }}  {{ contact.lastname }} </mat-card-title>
+                    <mat-card-subtitle>{{ contact.jobtitle }}</mat-card-subtitle>
+                    <img mat-card-sm-image src="" >
+                </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                {{ contact.phonenumber }}
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <button aria-label="delete contact" mat-icon-button (click)="deleteContact(contact.id)"><mat-icon>delete</mat-icon></button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

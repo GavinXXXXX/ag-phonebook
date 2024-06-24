@@ -1,0 +1,17 @@
+.contact-card {
+    width: 300px;
+    margin: 10px;
+}
+
+mat-card:hover {
+    /*transform: scale(1.1);*/
+    scale: 1.1;
+    cursor: pointer;
+}
+
+mat-card{
+    transition: scale .2s;}
+
+.material-icons.color-red{
+    color: red;
+}

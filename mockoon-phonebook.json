@@ -1,0 +1,166 @@
+{
+  "uuid": "fcaf7ba6-c4af-42c0-bfd9-31c77d7a6b84",
+  "lastMigration": 32,
+  "name": "Mockoon phonebook",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "5f79fd1e-5567-486b-9a3a-700b16fb7eb8",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "phonebook",
+      "responses": [
+        {
+          "uuid": "6813e245-e38a-44ed-bd59-35f8671621d0",
+          "body": "[\n  {\n    \"id\": 1,\n    \"firstname\": \"David\",\n    \"lastname\": \"Wang\",\n    \"jobtitle\": \"Sales Manager\",\n    \"phonenumber\": \"0921222345\"\n  },\n  {\n    \"id\": 2,\n    \"firstname\": \"Mary\",\n    \"lastname\": \"Lee\",\n    \"jobtitle\": \"Assistant\",\n    \"phonenumber\": \"0955432567\"\n  },\n  {\n    \"id\": 3,\n    \"firstname\": \"Allen\",\n    \"lastname\": \"Chen\",\n    \"jobtitle\": \"Tech Support\",\n    \"phonenumber\": \"0944322323\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "9e4eae63-247f-4d90-9d67-8cdc673327da",
+      "type": "http",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "phonebook/:id",
+      "responses": [
+        {
+          "uuid": "fc856a49-9f46-40ea-9b70-6957c32f3113",
+          "body": "[\n  {\n    \"id\": 1,\n    \"firstname\": \"David\",\n    \"lastname\": \"Wang\",\n    \"jobtitle\": \"Sales Manager\",\n    \"phonenumber\": \"0921222345\"\n  },\n  {\n    \"id\": 2,\n    \"firstname\": \"Mary\",\n    \"lastname\": \"Lee\",\n    \"jobtitle\": \"Assistant\",\n    \"phonenumber\": \"0955432567\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "1b3ef0ee-f40e-4b07-b405-131f1896ca94",
+      "type": "http",
+      "documentation": "",
+      "method": "options",
+      "endpoint": "phonebook/delete/:id",
+      "responses": [
+        {
+          "uuid": "acfcf110-220a-4517-90d0-d7cab6908fe3",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "5f79fd1e-5567-486b-9a3a-700b16fb7eb8"
+    },
+    {
+      "type": "route",
+      "uuid": "9e4eae63-247f-4d90-9d67-8cdc673327da"
+    },
+    {
+      "type": "route",
+      "uuid": "1b3ef0ee-f40e-4b07-b405-131f1896ca94"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": false,
+  "headers": [
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    },
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "3d3af55b-5be0-4775-a1ed-126dfc333aff",
+      "id": "jmvl",
+      "name": "Articles",
+      "documentation": "",
+      "value": "[\n  {{#repeat 10}}\n    {\n      \"id\": \"{{faker 'string.uuid'}}\",\n      \"title\": \"{{faker 'lorem.sentence'}}\",\n      \"author\": \"{{faker 'person.fullName'}}\",\n      \"date\": \"{{faker 'date.past'}}\",\n      \"content\": \"{{faker 'lorem.paragraph'}}\",\n      \"views\": {{faker 'number.int' max=99999}},\n      \"isPublished\": {{faker 'datatype.boolean'}}\n    }\n  {{/repeat}}\n]"
+    }
+  ],
+  "callbacks": []
+}
